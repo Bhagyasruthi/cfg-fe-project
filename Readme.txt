@@ -1,6 +1,9 @@
-Thanks for downloading this theme!
+# CFG : FE Project 
 
-Theme Name: BizPage
-Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
-Author: BootstrapMade.com
-Author URL: https://bootstrapmade.com
+Project to demostrate skills and technology learned under CFG Front End development
+
+## Overview
+
+.......
+TODO : add more 
+.......
