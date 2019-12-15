@@ -19,11 +19,16 @@
                  <img src="img\sign-up\foodie.png" width="100px" height="100px" alt="filter applied" />
                  
             <form class="signup-form">
-                <input type="User-name" class="input-box" placeholder="User name">
-                <input type="email" class="input-box" placeholder="Your Email">
-                <input type="password" class="input-box" placeholder="Your Password">
-                <p><span><input type="checkbox"></span> I agree terms and conditions</p>
-                <button type="button" class="signup-btn">Sign up</button>
+                <input id="username" type="User-name" class="input-box" placeholder="User name" required="required" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+
+                <input id="signup_email" type="email" class="input-box" required="required" placeholder="Your Email" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+               <input id="password" type="password" class="input-box" placeholder="Your Password" required="required" data-rule="minlen:4" data-msg="Please enter at least 4 chars"
+               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
+               <div class="validation"></div>
+               <p><span><input type="checkbox"></span> I agree terms and conditions</p>
+                <button type="button" class="signup-btn" onclick="return check()"><a href="hello2.html">Sign up</a></button>
                 <hr>
                 <p class="or">OR </p>
                 <button type="button" class="Facebook-btn">Login with Facebook</button>
@@ -43,7 +48,33 @@
             {
                 $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
             });
+
+            function check()
+            {
+                if(!document.getElementById("signup_email").checkValidity())
+               {
+                      //do stuff here ie. show errors
+                     alert("email not valid!");
+                     return false;
+                }
+                else if(!document.getElementById("username").checkValidity())
+               {
+                      //do stuff here ie. show errors
+                     alert("username not valid!");
+                     return false;
+                }
+                else if(!document.getElementById("password").checkValidity())
+               {
+                      //do stuff here ie. show errors
+                     alert("Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters");
+                     return false;   
+                }
+                else {
+                    return true;
+                }
+            }
+            
         </script>
     </body>
 
-</html>
+</html>     
